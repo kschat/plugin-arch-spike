@@ -1,4 +1,4 @@
-RadDesktop Plugin API
+Plugin API
 ==
 
 Object Model

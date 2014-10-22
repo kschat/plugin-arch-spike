@@ -1,0 +1,8 @@
+<ul class="dropdown-menu context-menu" role="menu" tabindex="-1">
+  <li class="menu-item"
+      data-ng-repeat="item in menuItems" 
+      data-ng-class="{ show: item.context === '*' || item.context === currentContext, disabled: !item.enabled }">
+
+    <a href="#" role="menuitem" data-ng-mousedown="itemHandler($event, item)">{{ item.label }}</a>
+  </li>
+</ul>

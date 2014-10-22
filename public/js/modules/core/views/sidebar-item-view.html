@@ -1,0 +1,17 @@
+<div class="panel" data-ng-class="plugin.active ? 'panel-primary' : 'panel-default'" data-context="sidebar-item">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <span class="fa fa-{{ item.icon }} title-icon" data-ng-show="item.icon"></span>
+
+      <a href="#sidbar-nav-{{ eId }}" data-toggle="collapse" data-parent="#sidebar-nav">
+        {{ item.title }}
+      </a>
+
+      <span class="fa fa-cog fa-spin pull-right" data-ng-class="{ hide: !plugin.loading }"></span>
+    </h4>
+  </div>
+
+  <div id="sidbar-nav-{{ eId }}" class="panel-collapse collapse">
+    <div class="panel-body"></div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+body {
+  padding-top: 70px;
+}
+
+.title-icon {
+  padding-right: 10px;
+}
+
+.context-menu {
+  position: absolute;
+  outline: none;
+  z-index: 10000;
+}
+
+.menu-item {
+  display: none;
+}
+
+.menu-item.disabled > a:hover {
+  cursor: default !important;
+}

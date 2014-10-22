@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Radical Desktop</title>
+
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script src="/js/dist/libs.js"></script>
+    <script src="/js/dist/app.js"></script>
+  </head>
+
+  <body data-ng-app="app" data-ng-controller="AppController">
+    <div class="container-fluid" data-ng-controller="PluginManagerController">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a href="#" class="navbar-brand">Radical Desktop</a>
+          </div>
+
+          <div id="my-app-navbar-collapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav" data-ng-repeat="plugin in plugins | headerItem" data-header-item="plugin"></ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="row">
+        <nav class="col-xs-2">
+          <div class="panel-group" id="sidebar-nav">
+            <div data-ng-repeat="plugin in plugins | sidebar" data-sidebar-item="plugin" data-item-select="sidebarItemClicked(e)"></div>
+          </div>
+        </nav>
+
+        <main role="main" class="col-xs-10">
+          <div data-ng-repeat="plugin in plugins | panel" data-panel="plugin"></div>
+        </main>
+      </div>
+
+      <div class="modals">
+        <div data-ng-repeat="plugin in plugins | modal" data-modal="plugin"></div>
+      </div>
+
+      <div class="popups">
+        <div data-ng-repeat="plugin in plugins" data-popup="plugin"></div>
+      </div>
+
+      <context-menu data-menu-items="contextMenus"></context-menu>
+    </div>
+
+    <script id="plugin-bootstrap-tmpl" type="text/x-template">
+      'use strict';
+      angular.element(document).ready(function() {
+        plugin.context = document;
+        angular.bootstrap(document, ['{{appName}}']);
+        __pluginManager__.register(plugin);
+      });
+    </script>
+  </body>
+</html>

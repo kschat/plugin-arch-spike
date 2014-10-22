@@ -1,0 +1,11 @@
+{
+  "service": {
+    "name": "RadDesktop API Prototype",
+    "description": "Server for the RadDesktop Plugin API prototype",
+    "domain": "",
+    "account": "",
+    "password": ""
+  },
+  "serverPath": "./app.js",
+  "port": 8000
+}
